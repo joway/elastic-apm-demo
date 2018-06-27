@@ -1,0 +1,55 @@
+{
+  "name": "elastic-apm-demo",
+  "version": "0.4.2",
+  "description": "",
+  "main": "dist/src/app.js",
+  "scripts": {
+    "start": "node dist/src/app.js",
+    "compile": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "tslint --project .",
+    "ci": "ava dist/tests",
+    "purge": "rm -rf package-lock.json node_modules && npm run clean",
+    "dev": "tsc -w & NODE_ENV=dev PORT=3000 nodemon dist/src/app.js",
+    "prettier": "prettier --config .prettierrc --write '{src,tests}/**/*.ts'",
+    "test": "npm run lint && npm run compile && NODE_ENV=dev npm run ci",
+    "build": "npm run clean && npm run compile && jike-docker-build"
+  },
+  "precommit": [
+    "prettier"
+  ],
+  "author": "joway",
+  "dependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.30",
+    "config": "1.30.0",
+    "elastic-apm-node": "^1.8.0",
+    "ioredis": "3.2.2",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
+    "mongoose": "4.9.9",
+    "request": "2.85.0",
+    "request-promise-native": "1.0.5",
+    "sleep-promise": "^8.0.1",
+    "source-map-support": "0.5.4"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.33",
+    "@types/ioredis": "0.0.27",
+    "@types/node": "8.0.46",
+    "@types/request-promise-native": "1.0.8",
+    "@types/sinon": "2.3.6",
+    "@types/supertest": "2.0.3",
+    "ava": "0.24.0",
+    "nock": "9.0.24",
+    "nodemon": "1.12.1",
+    "precommit": "1.2.2",
+    "sinon": "4.0.1",
+    "supertest": "3.0.0",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.10.0",
+    "tslint-jike-node": "0.0.14",
+    "typescript": "2.8.1"
+  },
+  "elastic-apm-demo": "0.4.1"
+}

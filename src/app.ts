@@ -1,4 +1,3 @@
-
 const apm = require('elastic-apm-node').start({
   serviceName: 'elastic-apm-demo-service',
   serverUrl: 'http://es-apm-svc.infra.svc.cluster.local:8200',
@@ -7,7 +6,7 @@ const apm = require('elastic-apm-node').start({
   serverTimeout: 10,
   maxQueueSize: 50,
   active: true,
-  logLevel: 'info',
+  logLevel: 'debug',
   sourceLinesErrorAppFrames: 0,
   sourceLinesErrorLibraryFrames: 0,
   sourceLinesSpanAppFrames: 0,
@@ -15,7 +14,7 @@ const apm = require('elastic-apm-node').start({
   stackTraceLimitedit: 5,
   transactionMaxSpans: 32,
 })
-import 'source-map-support/register'
+
 import * as Koa from 'koa'
 
 import routes from './routes'

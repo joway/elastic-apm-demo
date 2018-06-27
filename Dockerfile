@@ -6,8 +6,7 @@ WORKDIR /code
 COPY ./package.json ./package-lock.json ./
 RUN npm install --production
 
-COPY ./ ./
-RUN npm run compile
+COPY ./dist ./dist
 
 ENTRYPOINT ["npm", "run"]
 CMD ["start"]

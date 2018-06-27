@@ -5,6 +5,7 @@
   "main": "dist/src/app.js",
   "scripts": {
     "start": "node dist/src/app.js",
+    "client": "node dist/src/client.js",
     "compile": "tsc",
     "clean": "rm -rf dist",
     "lint": "tslint --project .",

@@ -23,6 +23,7 @@
   "dependencies": {
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.30",
+    "@types/mongoose": "^5.0.18",
     "config": "1.30.0",
     "elastic-apm-node": "^1.8.0",
     "ioredis": "3.2.2",

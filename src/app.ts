@@ -15,7 +15,7 @@ const apm = require('elastic-apm-node').start({
   stackTraceLimitedit: 5,
   transactionMaxSpans: 32,
 })
-// import 'source-map-support/register'
+import 'source-map-support/register'
 import * as Koa from 'koa'
 
 import routes from './routes'
